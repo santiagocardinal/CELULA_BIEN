@@ -23,7 +23,7 @@ namespace Ucu.Poo.GameOfLife
             // Bucle infinito para mostrar iteraciones
             while (true)
             {
-                Console.SetCursorPosition(0,0);
+                //Console.SetCursorPosition(0,0);
                 printer.PrintBoard();     // Imprime el tablero
                 rules.NextGeneration();   // Calcula la siguiente generación
 

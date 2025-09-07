@@ -21,8 +21,8 @@ namespace Ucu.Poo.GameOfLife
 
         public void PrintBoard()
         {
-            Console.SetCursorPosition(0, 0);
-            //
+            //Console.SetCursorPosition(0, 0);
+            Console.Clear();
             StringBuilder s = new StringBuilder();
             for (int y = 0; y<height; y++)
             {
@@ -41,12 +41,7 @@ namespace Ucu.Poo.GameOfLife
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-            Thread.Sleep(1000); 
+            Thread.Sleep(300); 
         }
-
-        //=================================================
-        //Invocar método para calcular siguiente generación
-        //=================================================
-
     }
 }
