@@ -6,9 +6,9 @@ namespace Ucu.Poo.GameOfLife
     public class BoardImporter
     {
         //VER TEMA RUTA RELATIVA Y/O HIBRIDA
-        static string url = @"C:\Users\Lucia\programacion2\jueguito\assets\board.txt";
+        static string url = "board.txt";
         static string content = File.ReadAllText(url);
-        static string[] contentLines = content.Split('\n').Select(l => l.Trim('\r')).ToArray();
+        private static string[] contentLines = content.Split('\n').Select(l => l.Trim('\r')).ToArray();
         private Cell[,] board;
 
         public BoardImporter()

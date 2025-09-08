@@ -7,28 +7,28 @@ namespace Ucu.Poo.GameOfLife
 {
     public class BoardPrinter
     {
-        private Cell[,] board; //variable que representa el tablero
+        private Board board; //variable que representa el tablero
         private int width; //variabe que representa el ancho del tablero
         private int height;  //variabe que representa altura del tablero
         
-        public BoardPrinter(Cell[,] board)
+        public BoardPrinter(Board board)
         {
             this.board = board;
-            this.height = board.GetLength(1); // filas
-            this.width = board.GetLength(0);  // columnas
+            this.height = board.Height;
+            this.width = board.Width;
         }
         
 
         public void PrintBoard()
         {
             //Console.SetCursorPosition(0, 0);
-            Console.Clear();
+            //Console.Clear();
             StringBuilder s = new StringBuilder();
             for (int y = 0; y<height; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
-                    if (board[x, y].Alive)
+                    if (board.GetCell(x, y).Alive)
                     {
                         s.Append("|X|");
                     }

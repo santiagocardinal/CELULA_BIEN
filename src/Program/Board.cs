@@ -4,15 +4,29 @@ public class Board
     {
         private Cell[,] cells;
 
-        public Cell[,] Cells
-        {
-            get { return cells; }
-            set { cells = value; }
-        }
-
+        public int Width { get { return cells.GetLength(0); } }
+        public int Height { get { return cells.GetLength(1); } }
+        
         public Board(Cell[,] matriz)
         {
-            this.Cells = matriz;
+            this.cells = matriz;
+        }
+
+        public Board(int width, int height)
+        {
+            this.cells = new Cell[width,height];
+            for (int i = 0; i < width ; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    this.cells[i, j] = new Cell(false);
+                }
+            }
+        }
+
+        public Cell GetCell(int x, int y)
+        {
+            return cells[x, y];
         }
     }
 }

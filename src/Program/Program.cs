@@ -13,23 +13,20 @@ namespace Ucu.Poo.GameOfLife
 
             // Creamos el objeto Board
             Board board = new Board(initialCells);
-
-            // Creamos las reglas con el tablero inicial
-            Rules rules = new Rules(board.Cells);
-
+            
             // Creamos el printer
-            BoardPrinter printer = new BoardPrinter(board.Cells);
+            BoardPrinter printer = new BoardPrinter(board);
 
             // Bucle infinito para mostrar iteraciones
             while (true)
-            {
+            {   Console.Clear();
                 //Console.SetCursorPosition(0,0);
                 printer.PrintBoard();     // Imprime el tablero
-                rules.NextGeneration();   // Calcula la siguiente generación
-
+                board = Rules.NextGeneration(board);   // Calcula la siguiente generación
+                
                 // Actualizamos el tablero y el printer
-                board.Cells = rules.GetBoard();
-                printer = new BoardPrinter(board.Cells);
+                
+                printer = new BoardPrinter(board);
 
                 //Thread.Sleep(300);        // Pausa de medio segundo entre generaciones
             }
